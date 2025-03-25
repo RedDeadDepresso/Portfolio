@@ -14,7 +14,7 @@ import {
 
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
-import { Link, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 
 interface RouteProps {
@@ -37,7 +37,7 @@ const routeList: RouteProps[] = [
   },
 ];
 
-export const Navbar = () => {
+export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
@@ -73,7 +73,7 @@ export const Navbar = () => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    Portfolio
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
@@ -93,7 +93,7 @@ export const Navbar = () => {
                     href="https://github.com/RedDeadDepresso"
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
+                      variant: "outline",
                     })}`}
                   >
                     <LinkedInLogoIcon className="mr-2 w-5 h-5" />
@@ -104,7 +104,7 @@ export const Navbar = () => {
                     href="https://github.com/RedDeadDepresso"
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
+                      variant: "outline",
                     })}`}
                   >
                     <GitHubLogoIcon className="mr-2 w-5 h-5" />
@@ -136,7 +136,7 @@ export const Navbar = () => {
               rel="noreferrer noopener"
               href="https://github.com/RedDeadDepresso"
               target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
+              className={`border ${buttonVariants({ variant: "outline" })}`}
             >
               <LinkedInLogoIcon className="w-5 h-5" />
             </a>
@@ -144,7 +144,7 @@ export const Navbar = () => {
               rel="noreferrer noopener"
               href="https://github.com/RedDeadDepresso"
               target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
+              className={`border ${buttonVariants({ variant: "outline" })}`}
             >
               <GitHubLogoIcon className="w-5 h-5" />
             </a>
