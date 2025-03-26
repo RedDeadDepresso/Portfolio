@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { MarkdownRenderer } from "@/components/ui/markdown-renderer"
+import { Card } from "./ui/card";
 
 export function About() {
 	const [avatar, setAvatar] = useState<string>("");
@@ -51,7 +52,7 @@ export function About() {
 
 	return (
 		<section id="about" className="container m-auto px-4 py-8">
-			<div className="bg-muted/50 border rounded-lg py-12">
+			<Card className="py-12">
 				<div className="px-6 flex flex-col md:flex-row gap-8 md:gap-12">
 					{avatar && <img src={avatar} alt="avatar" className="w-[300px] h-[300px] object-contain rounded-lg max-sm:mx-auto" />}
 					{!avatar && <Skeleton className="w-[300px] h-[300px] object-contain rounded-lg max-sm:mx-auto" />}
@@ -59,11 +60,6 @@ export function About() {
 						<div className="pb-6">
 							{content && 
 							<>
-							<h2 className="text-3xl md:text-4xl font-bold mb-4">
-								<span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-									Hi!
-								</span>
-							</h2>
 							<MarkdownRenderer>{content}</MarkdownRenderer>
 							</>
 							}
@@ -75,7 +71,7 @@ export function About() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</Card>
 		</section>
 	);
 }
