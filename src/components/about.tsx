@@ -24,6 +24,7 @@ export function About() {
 				link.rel = "icon";
 				document.getElementsByTagName("head")[0].appendChild(link);
 				link.href = json.avatar_url;
+				document.title = `Portfolio - ${GITHUB_USERNAME}`;
 			} catch (error) {
 				if (error instanceof Error) {
 					setErrorMessage(error.message);
@@ -60,16 +61,16 @@ export function About() {
 				{`Hi, I'm ${GITHUB_USERNAME}!`}
 			</h2>
 			<Card className="py-12">
-				<div className="px-6 flex flex-col md:flex-row gap-8 md:gap-12">
+				<div className="flex flex-col md:flex-row px-12 gap-12">
 					{avatar && (
 						<img
 							src={avatar}
 							alt="avatar"
-							className="w-[300px] h-[300px] object-contain rounded-lg max-sm:mx-auto"
+							className="w-[300px] h-[300px] object-contain rounded-lg mx-auto"
 						/>
 					)}
 					{!avatar && (
-						<Skeleton className="w-[300px] h-[300px] object-contain rounded-lg max-sm:mx-auto" />
+						<Skeleton className="w-[300px] h-[300px] object-contain rounded-lg mx-auto" />
 					)}
 					<div className="bg-green-0 flex flex-col justify-between">
 						<div className="pb-6">
