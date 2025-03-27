@@ -16,6 +16,7 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
+import { LINKEDIN_URL } from "@/data";
 
 interface RouteProps {
   href: string;
@@ -88,9 +89,10 @@ export function Navbar() {
                       {label}
                     </a>
                   ))}
+                  {LINKEDIN_URL &&                   
                   <a
                     rel="noreferrer noopener"
-                    href="https://github.com/RedDeadDepresso"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "outline",
@@ -99,6 +101,7 @@ export function Navbar() {
                     <LinkedInLogoIcon className="mr-2 w-5 h-5" />
                     LinkedIn
                   </a>
+                  }
                   <a
                     rel="noreferrer noopener"
                     href="https://github.com/RedDeadDepresso"
@@ -132,14 +135,17 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:flex gap-2">
-          <a
-              rel="noreferrer noopener"
-              href="https://github.com/RedDeadDepresso"
-              target="_blank"
-              className={`border ${buttonVariants({ variant: "outline" })}`}
-            >
-              <LinkedInLogoIcon className="w-5 h-5" />
-            </a>
+          {
+            LINKEDIN_URL && 
+            <a
+            rel="noreferrer noopener"
+            href={LINKEDIN_URL}
+            target="_blank"
+            className={`border ${buttonVariants({ variant: "outline" })}`}
+          >
+            <LinkedInLogoIcon className="w-5 h-5" />
+          </a>
+          }
             <a
               rel="noreferrer noopener"
               href="https://github.com/RedDeadDepresso"
