@@ -19,6 +19,11 @@ export function About() {
 				}
 				const json = await response.json();
 				setAvatar(json.avatar_url);
+
+				const link = document.createElement("link");
+				link.rel = "icon";
+				document.getElementsByTagName("head")[0].appendChild(link);
+				link.href = json.avatar_url;
 			} catch (error) {
 				if (error instanceof Error) {
 					setErrorMessage(error.message);
@@ -29,8 +34,7 @@ export function About() {
 		}
 
 		async function fetchAboutContent() {
-			const url =
-				`https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_USERNAME}/master/README.md`;
+			const url = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_USERNAME}/master/README.md`;
 			try {
 				const response = await fetch(url);
 				if (!response.ok) {

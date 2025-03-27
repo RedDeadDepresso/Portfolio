@@ -1,2 +1,2 @@
-export const GITHUB_USERNAME = "ReadDeadDepresso";
-export const LINKEDIN_URL = null;
+export const GITHUB_USERNAME = "RedDeadDepresso";
+export const LINKEDIN_URL = "";
