@@ -16,7 +16,7 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
-import { LINKEDIN_URL } from "@/data";
+import { CV_URL, GITHUB_USERNAME, LINKEDIN_URL } from "@/data";
 
 interface RouteProps {
   href: string;
@@ -32,11 +32,14 @@ const routeList: RouteProps[] = [
     href: "#projects",
     label: "Projects",
   },
-  {
+];
+
+if (CV_URL) {
+  routeList.push({
     href: "#cv",
     label: "CV",
-  },
-];
+  });
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -104,7 +107,7 @@ export function Navbar() {
                   }
                   <a
                     rel="noreferrer noopener"
-                    href="https://github.com/RedDeadDepresso"
+                    href={`https://github.com/${GITHUB_USERNAME}`}
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "outline",
@@ -148,7 +151,7 @@ export function Navbar() {
           }
             <a
               rel="noreferrer noopener"
-              href="https://github.com/RedDeadDepresso"
+              href={`https://github.com/${GITHUB_USERNAME}`}
               target="_blank"
               className={`border ${buttonVariants({ variant: "outline" })}`}
             >
