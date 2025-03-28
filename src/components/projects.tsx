@@ -61,10 +61,10 @@ export function Projects() {
 
 								<CardContent className="flex flex-col items-center gap-4">
 									<img
-										src={`/repos/${name}.png`}
+										src={`repos/${name}.png`}
 										alt=""
 										className="h-[300px] rounded-lg"
-										onError={(e) => (e.currentTarget.src = "/repos/unavailable.svg")}
+										onError={(e) => (e.currentTarget.src = "repos/unavailable.svg")}
 									/>
 
 									<p>{description}</p>
