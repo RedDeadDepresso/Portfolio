@@ -61,16 +61,16 @@ export function About() {
 				{`Hi, I'm ${GITHUB_USERNAME}!`}
 			</h2>
 			<Card className="py-12">
-				<div className="flex flex-col md:flex-row px-12 gap-12">
+				<div className="flex flex-col lg:flex-row px-12 gap-12 items-start">
 					{avatar && (
 						<img
 							src={avatar}
 							alt="avatar"
-							className="w-[300px] h-[300px] object-contain rounded-lg mx-auto"
+							className="w-sm object-contain rounded-lg mx-auto"
 						/>
 					)}
 					{!avatar && (
-						<Skeleton className="w-[300px] h-[300px] object-contain rounded-lg mx-auto" />
+						<Skeleton className="w-sm object-contain rounded-lg mx-auto" />
 					)}
 					<div className="bg-green-0 flex flex-col justify-between">
 						<div className="pb-6">
